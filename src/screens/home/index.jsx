@@ -3,6 +3,7 @@ import presentationImage from "../../assets/images/presentation.png";
 import Header from '../../components/header';
 import { Column, Section, Title, Container } from "rbx";
 import '../../styles/home.scss';
+import { Link } from "react-router-dom";
 
 const HomeScreen = () => (
     <Fragment>
@@ -18,9 +19,9 @@ const HomeScreen = () => (
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid eligendi libero illum sit tenetur cum maiores voluptatibus fugiat dolorum! 
                         </Title>
                         <br />
-                        <a className="button is-outlined is-white is-large">
+                        <Link to="/register" className="button is-outlined is-white is-large">
                             <strong>Register for free now</strong>
-                        </a>
+                        </Link>
                     </Column>
                     <Column size={6}>
                         <img src={presentationImage} />
