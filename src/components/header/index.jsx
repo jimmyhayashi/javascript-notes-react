@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container } from "rbx";
-import logoImage from "../../assets/images/logo.png";
+import logoImageWhite from "../../assets/images/logo-white.png";
 import '../../styles/header.scss';
 
 function Header() {
@@ -8,7 +8,7 @@ function Header() {
         <Navbar>
             <Container>
                 <Navbar.Brand>
-                    <img src={logoImage} />
+                    <img src={logoImageWhite} />
                     <Navbar.Burger
                         className="navbar-burger burger"
                         aria-label="menu"

@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { Notification, Section } from 'rbx';
 import './styles/App.scss';
-import Home from './screens/home';
+import RoutesApp from './routes';
 
 const App = () => (
   <Fragment>
-    <Home />
+    <RoutesApp />
   </Fragment>
 )
 
