@@ -2,13 +2,16 @@ import React from "react";
 import { Navbar, Container } from "rbx";
 import logoImageWhite from "../../assets/images/logo-white.png";
 import '../../styles/header.scss';
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <Navbar>
             <Container>
                 <Navbar.Brand>
-                    <img src={logoImageWhite} />
+                    <Link to="/">
+                        <img src={logoImageWhite} />
+                    </Link>
                     <Navbar.Burger
                         className="navbar-burger burger"
                         aria-label="menu"
