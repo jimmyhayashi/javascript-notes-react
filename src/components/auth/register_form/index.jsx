@@ -1,17 +1,7 @@
 import React, { Fragment, useState } from "react";
-import { Button, Field, Control, Input, Column, Section, Help, Label } from "rbx";
+import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import { Navigate } from "react-router-dom";
 import UsersService from "../../../services/user";
-
-const HandleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-        const user = await UsersService.register({ name: name, email: email, password: password });
-        setRedirectToLogin(true);
-    } catch (error) {
-        setError(true);
-    }
-}
 
 function RegisterForm() {
     const [name, setName] = useState('');
@@ -19,6 +9,16 @@ function RegisterForm() {
     const [password, setPassword] = useState('');
     const [redirectToLogin, setRedirectToLogin] = useState(false);
     const [error, setError] = useState(false);
+    const HandleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const user = await UsersService.register({ name: name, email: email, password: password });
+            setRedirectToLogin(true);
+        } catch (error) {
+            console.log(error);
+            setError(true);
+        }
+    };
 
     if (redirectToLogin)
         return <Navigate to="/login" />
