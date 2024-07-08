@@ -7,7 +7,7 @@ import UsersService from "../../services/user";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
-function HeaderLogged() {
+function HeaderLogged(props) {
     const [redirectToHome, setRedirectToHome] = useState(false);
 
     const logOut = async () => {
@@ -39,6 +39,13 @@ function HeaderLogged() {
                 </Navbar.Burger>
             </Navbar.Brand>
             <Navbar.Menu>
+                <Navbar.Segment as="div" className="navbar-item navbar-start" align="start">
+                    <Navbar.Item as="div">
+                    <Button className="button" color="white" outlined onClick={() => props.setIsOpen(true)}>
+                        <FontAwesomeIcon icon={faList} />
+                    </Button>
+                    </Navbar.Item>
+                </Navbar.Segment>
                 <Navbar.Segment as="div" className="navbar-item navbar-end" align="right">
                     <Navbar.Item as="div">
                         <Dropdown>
