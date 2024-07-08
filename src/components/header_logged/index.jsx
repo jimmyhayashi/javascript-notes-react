@@ -28,6 +28,15 @@ function HeaderLogged() {
                         </Link>
                     </Column>
                 </Column.Group>
+                <Navbar.Burger
+                    className="navbar-burger burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbar-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </Navbar.Burger>
             </Navbar.Brand>
             <Navbar.Menu>
                 <Navbar.Segment as="div" className="navbar-item navbar-end" align="right">
@@ -35,7 +44,7 @@ function HeaderLogged() {
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <Button className="button" color="white" outlined>
-                                    <span><FontAwesomeIcon icon={faList} /> Hello John Doe</span>
+                                    <span>Hello John Doe</span>
                                 </Button>
                             </Dropdown.Trigger>
                             <Dropdown.Menu>
