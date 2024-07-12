@@ -12,7 +12,7 @@
     padding: 10px;
 }
 
-///New part
+///New part 
 
 .list.notes-list { //conjunto de listas
     //padding: 25px;
@@ -36,7 +36,7 @@
 }
 
 .notes-list .list-item:hover {
-    background-color: #f9f9f9;
+    background-color: $custom-grey-light;
 }
 
 .notes-list .note-title {

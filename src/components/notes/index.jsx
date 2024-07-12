@@ -9,12 +9,24 @@ const Notes = ({ isOpen = false, setIsOpen }) => {
     const [notes, setNotes] = useState([]);
     const [current_note, setCurrentNote] = useState({ title: "", body: "", id: "" });
 
-    async function fetchNotes() {
+    async function fetchNotes() { 
         const response = await NotesService.index();
         if (response.data.length >= 1) {
             setNotes(response.data.reverse());
             setCurrentNote(response.data[0]);
+        } else {
+            setNotes([]);
         }
+    };
+
+    const createNote = async () => {
+        await NotesService.create();
+        fetchNotes();
+    };
+
+    const deleteNote = async (note) => {
+        await NotesService.delete(note._id);
+        fetchNotes();
     };
 
     const selectNote = (id) => {
@@ -47,7 +59,9 @@ const Notes = ({ isOpen = false, setIsOpen }) => {
                         <ListNotes
                             notes={notes}
                             selectNote={selectNote}
-                            current_note={current_note}  // Garantir que current_note está sendo passado corretamente
+                            current_note={current_note}  
+                            createNote={createNote}
+                            deleteNote={deleteNote}
                         />
                     </Column.Group>
                 </Menu>

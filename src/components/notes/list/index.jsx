@@ -4,7 +4,7 @@ import Moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-function ListNotes({ notes, selectNote, current_note }) {
+function ListNotes({ notes, selectNote, current_note, createNote, deleteNote }) {
     return (
         <Fragment>
             <Column.Group breakpoint="mobile">
@@ -12,6 +12,11 @@ function ListNotes({ notes, selectNote, current_note }) {
                     <Title size={6}>
                         {notes.length} Notes
                     </Title>
+                </Column>
+                <Column size={2}>
+                    <Button state="active" color="custom-purple" textColor="custom-purple" outlined size="small" onClick={() => createNote()}>
+                        New +
+                    </Button>
                 </Column>
             </Column.Group>
             <List className="notes-list">
@@ -35,7 +40,8 @@ function ListNotes({ notes, selectNote, current_note }) {
                                 </div>
                             </Column>
                             <Column size={2}>
-                                <FontAwesomeIcon icon={faTrash} color="gray"/>
+                                <FontAwesomeIcon icon={faTrash} color="gray"
+                                    onClick={() => deleteNote(item)}/>
                             </Column>   
                         </Column.Group>
                     </List.Item>
