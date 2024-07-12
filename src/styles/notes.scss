@@ -4,9 +4,54 @@
     height: calc(100% - 70px);
     margin-left: 0%;
     margin-right: 0%;
+    margin-top: 0%;
 }
 
-.bm-menu {
+.bm-menu { //barra de menu lateral com as notas
     background-color: white;
     padding: 10px;
 }
+
+///New part 
+
+.list.notes-list { //conjunto de listas
+    //padding: 25px;
+    border: 1px solid $custom-grey;
+}
+
+.list-item { //conjunto de listas
+    padding: 25px;
+    border: 1px solid $custom-grey;
+}
+
+//Second part
+.notes-list .list-item {
+    border: 1px solid $custom-grey;
+    //border-radius: 8px;
+    padding: 15px;
+    //margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-list .list-item:hover {
+    background-color: $custom-grey-light;
+}
+
+.notes-list .note-title {
+    font-weight: bold;
+}
+
+.notes-list .note-body {
+    margin-top: 5px;
+    color: #555;
+}
+
+.notes-list .note-date {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
