@@ -3,6 +3,8 @@ import "../../styles/notes.scss";
 import { push as Menu } from "react-burger-menu";
 import { Column } from "rbx";
 import ListNotes from "./list";
+import Editor from "./editor";
+import Search from "./search";
 import NotesService from "../../services/notes";
 
 const Notes = ({ isOpen = false, setIsOpen }) => {
@@ -24,10 +26,25 @@ const Notes = ({ isOpen = false, setIsOpen }) => {
         fetchNotes();
     };
 
+    const updateNote = async (oldNote, params) => {
+        const updatedNote = await NotesService.update(oldNote._id, params);
+        const index = notes.indexOf(oldNote);
+        const newNotes = notes;
+        newNotes[index] = updatedNote.data;
+        setNotes(newNotes);
+        setCurrentNote(updatedNote.data);
+    };
+
     const deleteNote = async (note) => {
-        await NotesService.delete(note._id);
+        await NotesService.delete(note._id, note);
         fetchNotes();
     };
+
+    const searchNote = async (query) => {
+        const response = await NotesService.search(query);
+        setNotes(response.data);
+    };
+        
 
     const selectNote = (id) => {
         const note = notes.find((note) => note._id === id);
@@ -52,7 +69,9 @@ const Notes = ({ isOpen = false, setIsOpen }) => {
                 >
                     <Column.Group>
                         <Column size={10} offset={1}>
-                            Search...
+                            <Search
+                                searchNote={searchNote} fetchNotes={fetchNotes}
+                            />
                         </Column>
                     </Column.Group>
                     <Column.Group>
@@ -66,7 +85,10 @@ const Notes = ({ isOpen = false, setIsOpen }) => {
                     </Column.Group>
                 </Menu>
                 <Column size={12} className="notes-editor" id="notes-editor">
-                    Editor...
+                    <Editor 
+                        note={current_note}
+                        updateNote={updateNote}
+                    />
                 </Column>
             </Column.Group>
         </Fragment>

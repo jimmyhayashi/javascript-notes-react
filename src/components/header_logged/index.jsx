@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Container, Column, Button, Dropdown } from "rbx";
+import { Navbar, Column, Button, Dropdown } from "rbx";
 import logoImageWhite from "../../assets/images/logo-white.png";
 import { Navigate, Link } from "react-router-dom";
 import "../../styles/header.scss";
@@ -9,11 +9,18 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 
 function HeaderLogged(props) {
     const [redirectToHome, setRedirectToHome] = useState(false);
-
     const logOut = async () => {
         await UsersService.logout();
         setRedirectToHome(true);
     };
+
+    const userName = () => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            return user.name;
+        }
+        return null;
+    }
 
     if (redirectToHome)
         return <Navigate to="/" />
@@ -51,7 +58,7 @@ function HeaderLogged(props) {
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <Button className="button" color="white" outlined>
-                                    <span>Hello John Doe</span>
+                                    <span>{userName()}</span>
                                 </Button>
                             </Dropdown.Trigger>
                             <Dropdown.Menu>
