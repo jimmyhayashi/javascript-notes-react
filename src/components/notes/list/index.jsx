@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Button, Column, Tag, Title, List } from "rbx";
 import Moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

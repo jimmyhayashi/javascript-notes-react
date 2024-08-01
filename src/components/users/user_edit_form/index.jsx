@@ -1,7 +1,8 @@
-import React, { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Button, Field, Control, Input, Help, Label } from "rbx";
 import { Column } from "rbx";
 import UsersService from "../../../services/user";
+import "../../../styles/users.scss";
 
 function UsersEditForm() {
     const [email, setEmail] = useState('');
@@ -59,7 +60,7 @@ function UsersEditForm() {
                     <Control>
                         <Column.Group>
                             <Column className="has-text-right">
-                                <Button color="custom-purple">Update</Button>
+                                <Button className="buttonUpdate">Update</Button>
                             </Column>
                         </Column.Group>
                     </Control>
