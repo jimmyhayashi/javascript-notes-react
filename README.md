@@ -24,12 +24,7 @@
  <a href="#contribute">Contribute</a>
 </p>
 
-
-<p align="center">
-    <video src="[../.github/example.mp4](https://github.com/user-attachments/assets/4b55d451-1017-48e0-8139-6b03600bb89b)" alt="Video Example" width="400px" controls>
-        Your browser does not support video tags.
-    </video>
-</p>
+https://github.com/user-attachments/assets/4b55d451-1017-48e0-8139-6b03600bb89b
 
 <h2 id="started">📌 About</h2>
 
