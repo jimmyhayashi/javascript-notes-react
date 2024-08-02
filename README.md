@@ -16,7 +16,6 @@
 ![html][HTML_BADGE]
 ![css][CSS_BADGE]
 
-
 <p align="center">
  <a href="#about">About</a> • 
  <a href="#started">Getting Started</a> • 
@@ -79,3 +78,4 @@ Here you can list the main routes of your API, and what are their expected reque
 | <kbd>/login</kbd>     | page to login
 | <kbd>/notes</kbd>     | page that contains all user notes
 | <kbd>/user/edit</kbd> | page that contains user information
+=======
