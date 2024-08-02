@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "rbx";
 import UsersService from "../../../services/user";
 import { Navigate } from "react-router-dom";

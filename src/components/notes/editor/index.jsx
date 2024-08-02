@@ -9,8 +9,19 @@ function Editor ({ note, updateNote }) {
     const [timer, setTimer] = useState(null);
 
     const updateLastContent = (content) => {
-        const title = content.replace(/(<([^>]+)>)/ig, "").slice(0, 30);
-        updateNote(note, { "title": title, body: content });
+        // Encontrar a posição da primeira ocorrência de <br>
+        const brIndex = content.indexOf('<br>');
+
+        let title = '';
+        if (brIndex !== -1) {
+            // Obter as primeiras 15 letras antes do <br>
+            title = content.substring(0, brIndex).replace(/(<([^>]+)>)/ig, "").slice(0, 15);
+        } else {
+            // Se não houver <br>, considerar as primeiras 15 letras do conteúdo
+            title = content.replace(/(<([^>]+)>)/ig, "").slice(0, 15);
+        }
+
+        updateNote(note, { title: title, body: content });
     }
 
     const handleChange = (content, delta, source) => {

@@ -1,7 +1,8 @@
-import React, { Fragment, useState, useEffect } from "react";
+import { Fragment, useState } from "react";
 import { Button, Field, Control, Input, Help, Label } from "rbx";
 import { Column } from "rbx";
 import UsersService from "../../../services/user";
+import "../../../styles/users.scss";
 
 function UsersEditPassword() {
     const [password, setPassword] = useState('');
@@ -53,7 +54,7 @@ function UsersEditPassword() {
                     <Control>
                         <Column.Group>
                              <Column className="has-text-right">
-                                <Button color="custom-purple">Update password</Button>
+                                <Button className="buttonUpdate">Update password</Button>
                             </Column>
                         </Column.Group> 
                     </Control>

@@ -7,8 +7,26 @@
     padding: 40px;
   }
   .users-edit{
+    flex-direction: column;
+    align-items: center;
     .title{
-   margin-bottom: 15px;
+        margin-bottom: 15px;
     }
   }
+}
+
+
+
+.buttonUpdate {
+  background-color: transparent; 
+  color: $custom-purple; 
+  border: 2px solid $custom-purple; /* Borda com a cor personalizada */
+  margin-top: 10px;
+  cursor: pointer; /* Mostra o cursor de mão ao passar sobre o botão */
+  transition: background-color 0.3s, color 0.3s; /* Transições suaves */
+}
+
+.buttonUpdate:hover {
+  background-color: $custom-purple; /* Cor de fundo ao passar o mouse */
+  color: white; /* Cor do texto ao passar o mouse */
 }
