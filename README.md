@@ -47,7 +47,7 @@ git gh repo clone jimmyhayashi/javascript-notes-react
 How to start your project
 
 ```bash
-cd project-name
+cd javascript-notes-react
 npm install
 npm run dev
 ```
